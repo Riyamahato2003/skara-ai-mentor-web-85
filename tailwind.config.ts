@@ -95,6 +95,11 @@ export default {
 					"0%": { backgroundPosition: "0% 50%" },
 					"50%": { backgroundPosition: "100% 50%" },
 					"100%": { backgroundPosition: "0% 50%" }
+				},
+				"confetti": {
+					"0%": { opacity: "0", transform: "translateY(-10px)" },
+					"10%": { opacity: "1" },
+					"100%": { opacity: "0", transform: "translateY(200px)" }
 				}
 			},
 			animation: {
@@ -103,7 +108,8 @@ export default {
 				"float": "float 6s ease-in-out infinite",
 				"fade-in": "fade-in 0.5s ease-out forwards",
 				"typing": "typing 2.5s steps(40, end), blink 0.75s step-end infinite",
-				"gradient-shift": "gradient-shift 15s ease infinite"
+				"gradient-shift": "gradient-shift 15s ease infinite",
+				"confetti": "confetti 2s ease-out forwards"
 			},
 			fontFamily: {
 				sans: ["Inter", "sans-serif"],

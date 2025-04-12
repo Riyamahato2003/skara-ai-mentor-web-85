@@ -46,7 +46,7 @@ const HeroSection = () => {
             {/* Confetti effect (simplified) */}
             {showConfetti && (
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-full h-full bg-[url('data:image/svg+xml;utf8,<svg width=\"40\" height=\"40\" viewBox=\"0 0 40 40\" xmlns=\"http://www.w3.org/2000/svg\"><circle cx=\"20\" cy=\"20\" r=\"3\" fill=\"%23a5c8ff\"/></svg>'),url('data:image/svg+xml;utf8,<svg width=\"30\" height=\"30\" viewBox=\"0 0 30 30\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"10\" y=\"10\" width=\"10\" height=\"10\" fill=\"%23d8c5ff\" transform=\"rotate(45 15 15)\"/></svg>'),url('data:image/svg+xml;utf8,<svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"16\" y=\"16\" width=\"4\" height=\"4\" fill=\"%23ff9b8f\"/></svg>')] animate-confetti"></div>
+                <div className="w-full h-full animate-confetti confetti-pattern"></div>
               </div>
             )}
           </div>
