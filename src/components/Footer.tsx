@@ -1,20 +1,14 @@
 
 import { Github, Instagram, MessageSquare } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
-  const handleEasterEgg = () => {
-    const input = document.getElementById('easter-egg-input') as HTMLInputElement;
-    if (input && input.value.toLowerCase() === 'study hack') {
-      alert('Study Hack: The Pomodoro Technique increases focus by breaking study sessions into 25-minute blocks with short breaks!');
-    }
-  };
-  
   return (
     <footer className="bg-muted/30 py-12 px-4">
       <div className="container max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <h2 className="text-2xl font-bold mb-4">Skara</h2>
+            <h2 className="text-2xl font-bold mb-4">CGPA Skills AI</h2>
             <p className="text-foreground/70 mb-6 max-w-md">
               An intelligent learning and career coach for college students, powered by advanced AI.
             </p>
@@ -34,36 +28,26 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2 text-foreground/70">
-              <li><a href="#" className="hover:text-primary transition-colors">Home</a></li>
-              <li><a href="#about" className="hover:text-primary transition-colors">About</a></li>
-              <li><a href="#modes" className="hover:text-primary transition-colors">Features</a></li>
-              <li><a href="#testimonials" className="hover:text-primary transition-colors">Testimonials</a></li>
+              <li><Link to="/" className="hover:text-primary transition-colors">Home</Link></li>
+              <li><Link to="/features" className="hover:text-primary transition-colors">Features</Link></li>
+              <li><Link to="/how-it-works" className="hover:text-primary transition-colors">How It Works</Link></li>
+              <li><Link to="/pricing" className="hover:text-primary transition-colors">Pricing</Link></li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Legal</h3>
+            <h3 className="font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-foreground/70">
-              <li><a href="#" className="hover:text-primary transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Cookie Policy</a></li>
+              <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link to="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
+              <li><Link to="#" className="hover:text-primary transition-colors">Terms of Service</Link></li>
+              <li><Link to="#" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
             </ul>
-            
-            {/* Easter Egg Input */}
-            <div className="mt-6">
-              <input 
-                id="easter-egg-input"
-                type="text" 
-                placeholder="Type a secret phrase..." 
-                className="w-full px-3 py-2 rounded-lg glass border border-white/20 text-sm"
-                onKeyUp={(e) => e.key === 'Enter' && handleEasterEgg()}
-              />
-            </div>
           </div>
         </div>
         
         <div className="mt-12 pt-6 border-t border-white/10 text-center text-foreground/60">
-          <p>© {new Date().getFullYear()} Skara. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} CGPA Skills AI. All rights reserved.</p>
         </div>
       </div>
     </footer>

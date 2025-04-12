@@ -1,6 +1,7 @@
 
-import React, { useState } from 'react';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { useState } from 'react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   const [showConfetti, setShowConfetti] = useState(false);
@@ -21,26 +22,27 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Smarter Study. Sharper Interviews. <span className="text-gradient">Powered by AI.</span>
+              Smarter Study. Sharper Careers. <span className="text-gradient">Powered by AI.</span>
             </h1>
             
             <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-lg">
-              Meet Skara — your intelligent learning and career coach that helps college students study smarter and prepare for their professional journey.
+              Your personal AI tutor and interview coach that helps you excel in academics and prepare for your professional journey.
             </p>
             
             <div className="flex flex-wrap gap-4">
-              <button 
+              <Link
+                to="/signup" 
                 className="button-primary flex items-center gap-2"
                 onClick={handleCtaClick}
               >
-                Try It Free <ArrowRight size={18} />
-              </button>
-              <button 
+                Start For Free <ArrowRight size={18} />
+              </Link>
+              <Link
+                to="/features" 
                 className="button-secondary flex items-center gap-2"
-                onClick={handleCtaClick}
               >
-                Join Beta <Sparkles size={18} />
-              </button>
+                See Features <ChevronDown size={18} />
+              </Link>
             </div>
             
             {/* Confetti effect (simplified) */}
@@ -61,7 +63,7 @@ const HeroSection = () => {
                 <div className="absolute -bottom-8 -left-8 w-16 h-16 bg-skara-mint/80 rounded-full blur-xl floating-element animation-delay-300"></div>
                 
                 <img 
-                  src="https://placehold.co/400x300/ffffff/a5c8ff?text=Student+Illustration" 
+                  src="https://placehold.co/400x300/ffffff/a5c8ff?text=AI+Tutor+Illustration" 
                   alt="Student with AI assistant" 
                   className="rounded-2xl mb-4"
                 />

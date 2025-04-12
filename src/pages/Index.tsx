@@ -1,17 +1,11 @@
 
-import Header from '../components/Header';
-import HeroSection from '../components/HeroSection';
-import FeaturesSection from '../components/FeaturesSection';
-import ModesOverview from '../components/ModesOverview';
-import AiInAction from '../components/AiInAction';
-import SmartFeatures from '../components/SmartFeatures';
-import DashboardShowcase from '../components/DashboardShowcase';
-import Testimonials from '../components/Testimonials';
-import PrivacySection from '../components/PrivacySection';
-import FinalCTA from '../components/FinalCTA';
-import Footer from '../components/Footer';
-import FloatingAssistant from '../components/FloatingAssistant';
 import { useEffect } from 'react';
+import PageLayout from '../components/PageLayout';
+import HeroSection from '../components/HeroSection';
+import FeaturesPreview from '../components/FeaturesPreview';
+import ModesOverview from '../components/ModesOverview';
+import Testimonials from '../components/Testimonials';
+import CallToAction from '../components/CallToAction';
 
 const Index = () => {
   // Handle scroll animations
@@ -35,22 +29,13 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen w-full">
-      <Header />
-      <main>
-        <HeroSection />
-        <FeaturesSection />
-        <ModesOverview />
-        <AiInAction />
-        <SmartFeatures />
-        <DashboardShowcase />
-        <Testimonials />
-        <PrivacySection />
-        <FinalCTA />
-      </main>
-      <Footer />
-      <FloatingAssistant />
-    </div>
+    <PageLayout>
+      <HeroSection />
+      <ModesOverview />
+      <FeaturesPreview />
+      <Testimonials />
+      <CallToAction />
+    </PageLayout>
   );
 };
 

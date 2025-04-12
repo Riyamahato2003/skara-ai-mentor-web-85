@@ -1,10 +1,12 @@
 
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
   
   useEffect(() => {
     const handleScroll = () => {
@@ -15,22 +17,55 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? 'py-3 glass shadow-sm' : 'py-5 bg-transparent'
     }`}>
       <div className="container max-w-6xl mx-auto px-4 flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold">
-          Skara
-        </a>
+        <Link to="/" className="text-2xl font-bold">
+          CGPA Skills AI
+        </Link>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          <a href="#about" className="text-foreground/70 hover:text-foreground transition-colors">About</a>
-          <a href="#modes" className="text-foreground/70 hover:text-foreground transition-colors">Modes</a>
-          <a href="#how-it-works" className="text-foreground/70 hover:text-foreground transition-colors">How It Works</a>
-          <a href="#features" className="text-foreground/70 hover:text-foreground transition-colors">Features</a>
-          <button className="button-primary">Try It Free</button>
+          <Link 
+            to="/" 
+            className={`${location.pathname === '/' ? 'text-foreground' : 'text-foreground/70'} hover:text-foreground transition-colors`}
+          >
+            Home
+          </Link>
+          <Link 
+            to="/features" 
+            className={`${location.pathname === '/features' ? 'text-foreground' : 'text-foreground/70'} hover:text-foreground transition-colors`}
+          >
+            Features
+          </Link>
+          <Link 
+            to="/how-it-works" 
+            className={`${location.pathname === '/how-it-works' ? 'text-foreground' : 'text-foreground/70'} hover:text-foreground transition-colors`}
+          >
+            How It Works
+          </Link>
+          <Link 
+            to="/pricing" 
+            className={`${location.pathname === '/pricing' ? 'text-foreground' : 'text-foreground/70'} hover:text-foreground transition-colors`}
+          >
+            Pricing
+          </Link>
+          <Link 
+            to="/login" 
+            className={`${location.pathname === '/login' ? 'text-foreground' : 'text-foreground/70'} hover:text-foreground transition-colors`}
+          >
+            Login
+          </Link>
+          <Link to="/signup" className="button-primary">
+            Try It Free
+          </Link>
         </nav>
         
         {/* Mobile Menu Button */}
@@ -49,40 +84,54 @@ const Header = () => {
       }`}>
         <div className="container mx-auto px-4 py-20">
           <nav className="flex flex-col space-y-6 items-center text-lg">
-            <a 
-              href="#about" 
-              className="w-full text-center py-3 hover:bg-muted rounded-lg transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+            <Link 
+              to="/" 
+              className={`w-full text-center py-3 ${location.pathname === '/' ? 'bg-muted' : 'hover:bg-muted'} rounded-lg transition-colors`}
             >
-              About
-            </a>
-            <a 
-              href="#modes" 
-              className="w-full text-center py-3 hover:bg-muted rounded-lg transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Modes
-            </a>
-            <a 
-              href="#how-it-works" 
-              className="w-full text-center py-3 hover:bg-muted rounded-lg transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              How It Works
-            </a>
-            <a 
-              href="#features" 
-              className="w-full text-center py-3 hover:bg-muted rounded-lg transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+              Home
+            </Link>
+            <Link 
+              to="/features" 
+              className={`w-full text-center py-3 ${location.pathname === '/features' ? 'bg-muted' : 'hover:bg-muted'} rounded-lg transition-colors`}
             >
               Features
-            </a>
-            <button 
-              className="button-primary w-full"
-              onClick={() => setIsMenuOpen(false)}
+            </Link>
+            <Link 
+              to="/how-it-works" 
+              className={`w-full text-center py-3 ${location.pathname === '/how-it-works' ? 'bg-muted' : 'hover:bg-muted'} rounded-lg transition-colors`}
+            >
+              How It Works
+            </Link>
+            <Link 
+              to="/pricing" 
+              className={`w-full text-center py-3 ${location.pathname === '/pricing' ? 'bg-muted' : 'hover:bg-muted'} rounded-lg transition-colors`}
+            >
+              Pricing
+            </Link>
+            <Link 
+              to="/about" 
+              className={`w-full text-center py-3 ${location.pathname === '/about' ? 'bg-muted' : 'hover:bg-muted'} rounded-lg transition-colors`}
+            >
+              About
+            </Link>
+            <Link 
+              to="/contact" 
+              className={`w-full text-center py-3 ${location.pathname === '/contact' ? 'bg-muted' : 'hover:bg-muted'} rounded-lg transition-colors`}
+            >
+              Contact
+            </Link>
+            <Link 
+              to="/login" 
+              className={`w-full text-center py-3 ${location.pathname === '/login' ? 'bg-muted' : 'hover:bg-muted'} rounded-lg transition-colors`}
+            >
+              Login
+            </Link>
+            <Link 
+              to="/signup" 
+              className="button-primary w-full text-center"
             >
               Try It Free
-            </button>
+            </Link>
           </nav>
         </div>
       </div>
