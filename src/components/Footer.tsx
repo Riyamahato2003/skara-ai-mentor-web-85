@@ -1,5 +1,5 @@
 
-import { Github, Instagram, MessageSquare } from 'lucide-react';
+import { Github, Instagram, MessageSquare, BookOpen } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -9,10 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 flex items-center justify-center">
-                <span className="text-white font-bold">S</span>
-              </div>
-              <h2 className="text-2xl font-bold">Skara</h2>
+              <img 
+                src="/lovable-uploads/6b5a8712-c0d0-44ae-bf8c-2186008868fa.png" 
+                alt="Skara Logo" 
+                className="h-10"
+              />
             </div>
             <p className="text-foreground/70 mb-6 max-w-md">
               An intelligent learning and career coach for college students, powered by advanced AI.

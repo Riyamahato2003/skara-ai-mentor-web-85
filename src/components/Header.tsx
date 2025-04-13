@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, BookOpen } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
@@ -28,10 +28,11 @@ const Header = () => {
     }`}>
       <div className="container max-w-6xl mx-auto px-4 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 flex items-center justify-center">
-            <span className="text-white font-bold">S</span>
-          </div>
-          <span className="text-2xl font-bold">Skara</span>
+          <img 
+            src="/lovable-uploads/6b5a8712-c0d0-44ae-bf8c-2186008868fa.png" 
+            alt="Skara Logo" 
+            className="h-10"
+          />
         </Link>
         
         {/* Desktop Navigation */}
