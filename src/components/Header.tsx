@@ -27,8 +27,11 @@ const Header = () => {
       isScrolled ? 'py-3 glass shadow-sm' : 'py-5 bg-transparent'
     }`}>
       <div className="container max-w-6xl mx-auto px-4 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold">
-          CGPA Skills AI
+        <Link to="/" className="flex items-center gap-2">
+          <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 flex items-center justify-center">
+            <span className="text-white font-bold">S</span>
+          </div>
+          <span className="text-2xl font-bold">Skara</span>
         </Link>
         
         {/* Desktop Navigation */}

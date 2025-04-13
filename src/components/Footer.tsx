@@ -8,7 +8,12 @@ const Footer = () => {
       <div className="container max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <h2 className="text-2xl font-bold mb-4">CGPA Skills AI</h2>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 flex items-center justify-center">
+                <span className="text-white font-bold">S</span>
+              </div>
+              <h2 className="text-2xl font-bold">Skara</h2>
+            </div>
             <p className="text-foreground/70 mb-6 max-w-md">
               An intelligent learning and career coach for college students, powered by advanced AI.
             </p>
@@ -47,7 +52,7 @@ const Footer = () => {
         </div>
         
         <div className="mt-12 pt-6 border-t border-white/10 text-center text-foreground/60">
-          <p>© {new Date().getFullYear()} CGPA Skills AI. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Skara. All rights reserved.</p>
         </div>
       </div>
     </footer>
