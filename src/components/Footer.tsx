@@ -1,5 +1,5 @@
 
-import { Github, Instagram, MessageSquare, BookOpen } from 'lucide-react';
+import { Github, Instagram, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
