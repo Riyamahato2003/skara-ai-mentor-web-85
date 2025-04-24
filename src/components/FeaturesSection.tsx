@@ -1,4 +1,6 @@
-import { BookOpen, FlaskConical, Mic, Users, FileText, Message, Search, Video } from 'lucide-react';
+
+import { BookOpen, FlaskConical, Mic, Users, FileText, MessageSquare, Search, Video } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const FeaturesSection = () => {
   const features = [

@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Mic, Stop } from 'lucide-react';
+import { Mic, Square } from 'lucide-react';
 import { Button } from './ui/button';
 import { useToast } from '../hooks/use-toast';
 
@@ -50,7 +50,7 @@ const AudioRecorder = ({ onRecordingComplete }: { onRecordingComplete: (blob: Bl
       >
         {isRecording ? (
           <>
-            <Stop className="mr-2 h-4 w-4" />
+            <Square className="mr-2 h-4 w-4" />
             Stop Recording
           </>
         ) : (
