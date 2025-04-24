@@ -1,4 +1,3 @@
-
 import { Routes, Route } from "react-router-dom";
 
 import Index from "../pages/Index";
@@ -11,6 +10,10 @@ import SignUp from "../pages/SignUp";
 import Login from "../pages/Login";
 import DashboardPreview from "../pages/DashboardPreview";
 import NotFound from "../pages/NotFound";
+import StudyAgent from "../pages/StudyAgent";
+import SmartCalendar from "../pages/SmartCalendar";
+import QuizGenerator from "../pages/QuizGenerator";
+import ContentSummarizer from "../pages/ContentSummarizer";
 
 const AppRoutes = () => {
   return (
@@ -24,6 +27,10 @@ const AppRoutes = () => {
       <Route path="/signup" element={<SignUp />} />
       <Route path="/login" element={<Login />} />
       <Route path="/dashboard-preview" element={<DashboardPreview />} />
+      <Route path="/study-agent" element={<StudyAgent />} />
+      <Route path="/smart-calendar" element={<SmartCalendar />} />
+      <Route path="/quiz-generator" element={<QuizGenerator />} />
+      <Route path="/content-summarizer" element={<ContentSummarizer />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

@@ -1,6 +1,6 @@
-
 import { useEffect } from 'react';
-import { Brain, GraduationCap, Video, Users } from 'lucide-react';
+import { Brain, Calendar, BookOpen, FileText } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import PageLayout from '../components/PageLayout';
 import CallToAction from '../components/CallToAction';
 
@@ -30,7 +30,6 @@ const FeatureSection = ({ icon: Icon, title, description, items, className = "" 
 );
 
 const Features = () => {
-  // Scroll animation
   useEffect(() => {
     const handleScrollAnimation = () => {
       const elements = document.querySelectorAll('.scroll-fade-in');
@@ -48,98 +47,30 @@ const Features = () => {
     return () => window.removeEventListener('scroll', handleScrollAnimation);
   }, []);
 
-  const features = [
+  const studyTools = [
     {
       icon: Brain,
-      title: "Smart Study Planner",
-      description: "Our AI analyzes your learning style and creates optimized study plans tailored to your goals and schedule.",
-      items: [
-        {
-          title: "Study Agent",
-          description: "Personal AI assistant that adapts to your learning pace and focuses on areas where you need more practice."
-        },
-        {
-          title: "Smart Calendar",
-          description: "Optimizes your study sessions based on spaced repetition and your peak productivity hours."
-        },
-        {
-          title: "Quiz Generator",
-          description: "Creates custom quizzes that adapt to your knowledge gaps and learning progression."
-        },
-        {
-          title: "Content Summarizer",
-          description: "Transforms lengthy textbooks and articles into concise, easy-to-understand summaries."
-        }
-      ]
+      title: "Study Agent",
+      description: "Get personalized study guidance with our AI-powered study agent that adapts to your learning style.",
+      link: "/study-agent"
     },
     {
-      icon: GraduationCap,
-      title: "AI Interview Coach",
-      description: "Practice for job interviews with an AI that analyzes your responses and helps you improve your presentation.",
-      items: [
-        {
-          title: "Voice Analysis",
-          description: "Provides feedback on your tone, pace, clarity, and confidence during mock interviews."
-        },
-        {
-          title: "Resume Review",
-          description: "AI-powered analysis of your resume with suggestions for improvements and keyword optimization."
-        },
-        {
-          title: "Mock Interviews",
-          description: "Realistic interview simulations for different industries with personalized feedback."
-        },
-        {
-          title: "Answer Library",
-          description: "Access to model answers for common interview questions in your field of study."
-        }
-      ]
+      icon: Calendar,
+      title: "Smart Calendar",
+      description: "Create optimized study schedules based on your availability and learning goals.",
+      link: "/smart-calendar"
     },
     {
-      icon: Video,
-      title: "AI Video Lessons",
-      description: "Custom video explanations that break down complex concepts into easy-to-understand visual lessons.",
-      items: [
-        {
-          title: "Concept Explainers",
-          description: "AI-generated videos that visualize difficult concepts from your coursework."
-        },
-        {
-          title: "Step-by-Step Tutorials",
-          description: "Visual walkthroughs of problem-solving processes tailored to your learning style."
-        },
-        {
-          title: "Micro-Lessons",
-          description: "Bite-sized video content focused on specific concepts that you're struggling with."
-        },
-        {
-          title: "Interactive Examples",
-          description: "Videos with built-in quizzes and interactive elements to enhance retention."
-        }
-      ]
+      icon: BookOpen,
+      title: "Quiz Generator",
+      description: "Generate custom quizzes to test your knowledge and track your progress.",
+      link: "/quiz-generator"
     },
     {
-      icon: Users,
-      title: "Collaboration Features",
-      description: "Connect with peers and study more effectively together, even when you're physically apart.",
-      items: [
-        {
-          title: "Group Study",
-          description: "Virtual study rooms with shared materials and AI-facilitated discussions."
-        },
-        {
-          title: "Shared Flashcards",
-          description: "Create and share smart flashcard decks that adapt to the group's learning needs."
-        },
-        {
-          title: "Doubt Solver",
-          description: "Get instant help on difficult questions from AI or route them to peers who can assist."
-        },
-        {
-          title: "Progress Tracking",
-          description: "Monitor individual and group progress with detailed analytics and insights."
-        }
-      ]
+      icon: FileText,
+      title: "Content Summarizer",
+      description: "Transform lengthy content into concise, easy-to-understand summaries.",
+      link: "/content-summarizer"
     }
   ];
 
@@ -147,24 +78,34 @@ const Features = () => {
     <PageLayout>
       <div className="py-16 bg-gradient-to-b from-background to-muted/20">
         <div className="container max-w-6xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Unlock Your Full Potential</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Smart Study Tools</h1>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-            CGPA Skills AI brings powerful learning tools to help you excel in your academics and prepare for your professional career.
+            Enhance your learning experience with our AI-powered study tools designed to help you succeed.
           </p>
         </div>
       </div>
       
-      <div className="bg-background">
-        {features.map((feature, index) => (
-          <FeatureSection 
-            key={index} 
-            icon={feature.icon} 
-            title={feature.title} 
-            description={feature.description} 
-            items={feature.items}
-            className={index % 2 === 1 ? "bg-muted/20" : ""}
-          />
-        ))}
+      <div className="bg-background py-16">
+        <div className="container max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {studyTools.map((tool, index) => (
+              <Link 
+                key={index}
+                to={tool.link}
+                className="glass-card p-8 rounded-xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+              >
+                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+                  <tool.icon size={32} className="text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4">{tool.title}</h3>
+                <p className="text-foreground/70 mb-6">{tool.description}</p>
+                <div className="button-primary inline-flex items-center">
+                  Try {tool.title}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
       
       <CallToAction />
