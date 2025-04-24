@@ -14,6 +14,10 @@ import StudyAgent from "../pages/StudyAgent";
 import SmartCalendar from "../pages/SmartCalendar";
 import QuizGenerator from "../pages/QuizGenerator";
 import ContentSummarizer from "../pages/ContentSummarizer";
+import VoiceAnalysis from "../pages/VoiceAnalysis";
+import ResumeReview from "../pages/ResumeReview";
+import MockInterviews from "../pages/MockInterviews";
+import AnswerLibrary from "../pages/AnswerLibrary";
 
 const AppRoutes = () => {
   return (
@@ -31,6 +35,10 @@ const AppRoutes = () => {
       <Route path="/smart-calendar" element={<SmartCalendar />} />
       <Route path="/quiz-generator" element={<QuizGenerator />} />
       <Route path="/content-summarizer" element={<ContentSummarizer />} />
+      <Route path="/voice-analysis" element={<VoiceAnalysis />} />
+      <Route path="/resume-review" element={<ResumeReview />} />
+      <Route path="/mock-interviews" element={<MockInterviews />} />
+      <Route path="/answer-library" element={<AnswerLibrary />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
